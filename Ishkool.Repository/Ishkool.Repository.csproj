@@ -19,4 +19,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ishkool.Core\Ishkool.Core.csproj" />
+  </ItemGroup>
+
 </Project>

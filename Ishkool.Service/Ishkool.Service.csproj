@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Ishkool.Repository\Ishkool.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
