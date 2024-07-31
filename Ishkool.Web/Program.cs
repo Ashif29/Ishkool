@@ -1,4 +1,8 @@
 using Ishkool.Repository.DataAccess;
+using Ishkool.Repository.Repositories.Contracts;
+using Ishkool.Repository.Repositories.Implementations;
+using Ishkool.Service.Services.Contracts;
+using Ishkool.Service.Services.Implementations;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +13,21 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSqlConnection"));
 });
+
+
+/* #####################   Repository Dependency Injection ######################## */
+
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+
+
+
+
+/* #####################   Service Dependency Injection ######################## */
+
+builder.Services.AddScoped<IStudentService, StudentService>();
+
+
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
